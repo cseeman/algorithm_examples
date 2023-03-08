@@ -2,6 +2,9 @@
 Working through Algorithms Illuminated Part 1: The Basics by Tim Roughgarden using Ruby
 
 ## Testing
+Try irb, if that doesn't work, go for pry.
+
+### Divide And Conquer Algorithms
 I ran these just with irb. No spec, I know that wasn't good, but this is me attempting to learn the material.
 `irb -r ./merge_and_count_sort.rb`
 ```
@@ -24,3 +27,19 @@ irb -r ./merge_sort
 irb(main):001:0> MergeSort.sort([1,5,2,8,6,3])
 => [1, 2, 3, 5, 6, 8]
 ```
+
+```
+➜ irb -r ./closest_pair.rb
+irb(main):001:0> obj = ClosestPair.new
+obj.check_performance
+[0.0035199181139167804, [#<struct ClosestPair::Point x=0.8999101163908466, y=0.009114553435330297>, #<struct ClosestPair::Point x=0.899139845049878, y=0.005679949296574005>]]
+[0.0035199181139167804, [#<struct ClosestPair::Point x=0.899139845049878, y=0.005679949296574005>, #<struct ClosestPair::Point x=0.8999101163908466, y=0.009114553435330297>]]
+Starting Benchmark...
+              user     system      total        real
+bruteforce  9.346157   0.127179   9.473336 (  9.526308)
+recursive   0.059381   0.001229   0.060610 (  0.060931)
+>total:   9.405538   0.128408   9.533946 (  9.587239)
+>avg:     4.702769   0.064204   4.766973 (  4.793619)
+...End of Benchmark.
+```
+
