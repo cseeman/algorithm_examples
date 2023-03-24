@@ -5,7 +5,8 @@
 # All credit to the original author @mwong068, https://github.com/mwong068
 #
 # This is monkeypatching Array, so just use an array!
-#
+# irb -r ./quicksort
+# arr = [9,7,8,3,6,4,1,2,5]
 # arr.quick_sort 
 # >> [1, 2, 3, 4, 5]
 #
