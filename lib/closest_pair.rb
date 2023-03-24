@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+
 require 'benchmark'
 
 # Original code was from https://rosettacode.org/wiki/Closest-pair_problem#Ruby
 # Rosetta Code Closest Pair Problem in Ruby
-# Updating to make it a bit more idiomatic ruby. 
+# Updating to make it a bit more idiomatic ruby.
 class ClosestPair
   include Benchmark
   Point = Struct.new(:x, :y)
@@ -60,14 +61,14 @@ class ClosestPair
 
     raise 'bogus!' if ans1[0] != ans2[0]
 
-    puts "Starting Benchmark..."
+    puts 'Starting Benchmark...'
     points = Array.new(10_000) { Point.new(rand, rand) }
-    Benchmark.benchmark(CAPTION, 7, FORMAT, ">total:   ", ">average: ") do |x|
-      bruteforce = x.report('bruteforce') { closest_bruteforce(points); }
-      recursive  = x.report('recursive ')  { closest_recursive(points); }
+    Benchmark.benchmark(CAPTION, 7, FORMAT, '>total:   ', '>average: ') do |x|
+      bruteforce = x.report('bruteforce') { closest_bruteforce(points) }
+      recursive  = x.report('recursive ')  { closest_recursive(points) }
       [bruteforce + recursive, (bruteforce + recursive) / 2]
     end
 
-    puts "...End of Benchmark."
+    puts '...End of Benchmark.'
   end
 end
