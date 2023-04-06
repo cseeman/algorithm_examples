@@ -42,4 +42,18 @@ recursive   0.059381   0.001229   0.060610 (  0.060931)
 >avg:     4.702769   0.064204   4.766973 (  4.793619)
 ...End of Benchmark.
 ```
+### Select Algorithm
 
+#### RSelect Algorithm
+
+
+The find_order_smallest method first checks if the array is empty or if k is greater than the length of the array. If either of these conditions is true, it returns nil.
+The method then selects a random pivot element from the array using the sample method. It then partitions the array into three parts: elements less than the pivot, elements equal to the pivot, and elements greater than the pivot.
+It then uses recursion to continue the Select algorithm on the appropriate partition of the array depending on the value of k. If k is less than or equal to the length of the less partition, the method is called recursively on the less partition with the same value of k. If k is less than or equal to the length of the less and equal partitions combined, the method returns the pivot value. Otherwise, the method is called recursively on the greater partition with the value of k adjusted to account for the elements in the less and equal partitions.
+
+irb -r ./r_select.rb
+
+```
+> RSelect.find_order_smallest([4,3,2,5,7,9], 3)
+> 4
+```
